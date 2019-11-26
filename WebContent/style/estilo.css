@@ -1,0 +1,571 @@
+@CHARSET "UTF-8";
+
+
+.texto {
+	width: 30%;
+}
+
+.form {
+	width: 30%;
+}
+
+.messages {
+	width: 40%;
+}
+
+.dataTable {
+	width: 15%;
+	width: 15%;
+	width: 15%;
+	text-align: left;
+	border: 0;
+}
+
+.headerTableFixed TH {
+	position: relative;
+	top: 0px;
+}
+
+.headerTableFixed {
+	height: 27px;
+	position: relative;
+	top: expression(this.parentNode.parentNode.parentNode.scrollTop + 'px');
+}
+
+.labelPesquisa {
+	color: #637948;
+}
+
+.mensagemInfo {
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	height: 37px;
+	vertical-align: bottom;
+	padding: 5px;
+	margin-left: 5px;
+	color: #637948;
+	background: #C7D5B7;
+	text-indent: 3em;
+	background-image: url(../images/icoInfo.gif);
+	background-repeat: no-repeat;
+	border: 2px solid #637948;
+}
+
+.mensagemErro {
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	height: 37px;
+	color: #AB3838;
+	vertical-align: middle;
+	padding: 5px;
+	margin-left: 5px;
+	background-image: url(../images/icoErro.gif);
+	background-repeat: no-repeat;
+	background-color: #FFDBDB;
+	text-indent: 3em;
+	border: 2px solid #EB7878;
+}
+
+.mensagemWarning {
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	height: 37px;
+	color: #AB3838;
+	vertical-align: middle;
+	padding: 5px;
+	margin-left: 5px;
+	background-image: url(../images/icoErro.gif);
+	background-repeat: no-repeat;
+	text-indent: 3em;
+	background-color: #FFDBDB;
+	border: 2px solid #EB7878;
+}
+
+.borda {
+	border: 1px solid #637948;
+	margin: 5px 0 5px 0;
+}
+
+.corOutput {
+	color: #637948;
+}
+
+.a a {
+	text-decoration: none;
+}
+
+.b a {
+	text-decoration: none;
+}
+
+.b {
+	background: #DCDCDC;
+} /* Fundo de linhas de tabela */
+.data {
+	text-align: center
+}
+
+.dataPopup {
+	text-align: justify;
+}
+
+.c c {
+	text-decoration: none;
+}
+
+.d c {
+	text-decoration: none;
+}
+
+.corDesertor {
+	background: #FFFF00;
+}
+
+.d {
+	background: #CAFF70;
+}
+
+.e {
+	background: #FF7A5F;
+}
+
+.impedimento {
+	background: #66CDAA;
+}
+
+.alignmentLeft {
+	text-align: left;
+}
+
+.alignmentRight {
+	text-align: right;
+}
+
+body {
+	font-size: 12px;
+}
+
+.impedimento {
+	background: #66CDAA;
+}
+
+.restricao {
+	background: #6495ED;
+}
+
+.ui-panelgrid .ui-panelgrid-cell {
+	border: none;
+	border-style: none
+}
+
+.pesquisaSup {
+	border: none;
+	border-style: none
+}
+
+.pesquisaSup tr {
+	border: none;
+	border-style: none
+}
+
+.pesquisaSup td {
+	border: none;
+	border-style: none
+}
+
+.ui-corner-all {
+	border: none;
+	border-style: none
+}
+
+.pesquisaGrid {
+	background-color: #000;
+}
+
+.ui-widget-content {
+	border: none;
+	border-style: none
+}
+
+.pagina {
+	color: #325D82;
+	text-decoration: none;
+}
+
+.labelConteudo {
+	color: #325D82;
+	padding: 2px
+}
+
+* {
+	margin: 0
+}
+
+.jm-central.rol h1, .na dd a, .elip, .chat h1, .op a {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.c-user>img {
+	float: left;
+	margin: 0 0 6px;
+	width: 30px;
+	height: 40px
+}
+
+.separ>span, img, .ab .voltar {
+	background: none;
+	border: 0
+}
+
+.conv .carro img {
+	border-radius: 0 0 5px 5px;
+	margin: 8px -8px -8px;
+	width: calc(100% + 16px)
+}
+
+#m h1, .info, .erro, .alerta, .ok, .conf, .pla, .ad2, .es, .ad, .aj, .sa,
+	.pasta, .ca, .as, .ed, .im, .pr, .hi, .an, .txt, .man, .usr, .graf,
+	.mais, .menos, .ant, .pro, .cim, .bai, .fa, .fav, .ch, .sair, .ex, .fe,
+	.fe2, .resp, .enc, .carta, .senha, .aberto, .opc, .dock {
+	background-image: url(../img/i.svg);
+	background-repeat: no-repeat
+}
+
+.conv img {
+	border-radius: 5px;
+	display: block;
+	width: 100%
+}
+
+.separ>span, img, .ab .voltar {
+	background: none;
+	border: 0
+}
+[class^="chat-ch-"] {
+	background: url(../img/i.svg) 1px -6120px no-repeat;
+	padding: 0 9px
+}
+
+.op a:before, .menu-pr:before {
+	background: url(../img/i.svg) 0 -6000px no-repeat;
+	content: "";
+	margin: 0 20px 0 0;
+	height: 20px;
+	width: 20px;
+	opacity: .6;
+	float: left
+}
+
+
+.play {
+	background: url(../img/i.svg) 16px -5864px no-repeat rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
+	top: calc(50% - 26px);
+	left: calc(50% - 50px);
+	padding: 16px 2px 16px 46px;
+	text-align: left;
+	width: 52px
+}
+
+#m a, #m li, #c1, label:first-child, .f2, .f3, .zd, .ar dl {
+	float: left
+}
+
+#m ul, #c3, .op, h2>span, .rig, .n-msg, .direita {
+	float: right
+}
+
+#m2 {
+	padding: 0;
+	right: 0;
+	top: 60px;
+	width: 800px;
+	border-width: 0 0 1px 1px
+}
+
+#m ul, h2, .su, h4, .ar, .c-foto, .mod li {
+	overflow: hidden
+}
+
+
+#m, .ac, .ob label:first-child, #u1, .op, .chat, .jm .relat .fe, .c-foto,
+	.conv p, .mod, .c-list, .n-msg, .c-user .rol, .busca .fe, .ins, .video
+	{
+	position: relative
+}
+
+#m a, .op a, #c1 a {
+	color: rgba(255, 255, 255, 0.88);
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+		box-shadow 0.2s ease-in-out
+}
+
+
+#m {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+	z-index: 4
+}
+
+#m ul {
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.09), transparent
+		10px);
+	border-right: 1px solid rgba(0, 0, 0, 0.16);
+	margin: -60px 0 0 0;
+	padding: 9px 23px
+}
+
+#m ul:not (.mod ) .at a {
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+}
+
+#m h1 {
+	padding: 18px 24px;
+	font-size: 18px;
+	line-height: 24px
+}
+
+#m h1 a {
+	float: none;
+	color: #fff;
+	margin: -10px;
+	display: inline-block;
+	padding: 8px 10px
+}
+
+#m .mod {
+	padding: 5px 19px;
+	line-height: 40px;
+	transition: color 200ms ease-in-out, background-color 200ms ease-in-out,
+		box-shadow 200ms ease-in-out
+}
+
+#m .mod:hover {
+	background-color: #235b8b;
+	border-left: 1px solid rgba(0, 0, 0, 0.09);
+	box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.6)
+}
+
+#m .mod a {
+	font-size: 14px;
+	margin: 5px;
+	opacity: 0.9;
+	outline: 0;
+	transition: none;
+	white-space: nowrap
+}
+
+#m .mod a:hover {
+	opacity: 0.95
+}
+
+#m .mod .at a {
+	opacity: 1;
+	color: rgba(255, 255, 255, 0.6)
+}
+
+
+#m a, .op a {
+	border-radius: 5px;
+	margin: 1px;
+	padding: 10px
+}
+
+#m a:hover, .op a:hover {
+	background-color: rgba(0, 0, 0, 0.12)
+}
+
+
+#m:hover ~ #n, .op:hover ~ #n, #n:hover, .jm {
+	margin: 0;
+	box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.6);
+	opacity: 1
+}
+
+#m li, h3 a:hover, ul.msg li, input:active, button:active {
+	background-image: none
+}
+
+
+
+@media screen and (max-width: 799px) {
+	#m ul {
+		background: rgba(0, 0, 0, 0.1);
+		border-width: 0;
+		padding: 9px;
+		margin: 0;
+		float: none
+	}
+	#m
+	 
+	.mod
+	:not
+	 
+	(
+	.show
+	 
+	){
+	padding-right
+	:
+	 
+	90
+	px
+	
+	
+}
+
+#m .mod:hover {
+	border: 0
+}
+
+
+#m2 {
+	width: auto;
+	border: 0
+}
+
+#m2.mc1 {
+	left: 150px
+}
+
+#m2 .menu {
+	padding: 6px 23px 6px 0;
+	position: initial
+}
+
+.mc1 ~ * #c1 {
+	background: #fff;
+	display: block;
+	position: absolute;
+	z-index: 4
+}
+
+@media screen and (max-width: 460px) {
+	#m .mod {
+		padding: 3px
+	}
+	#m
+	 
+	.mod
+	:not
+	 
+	(
+	.show
+	 
+	){
+	padding-right
+	:
+	 
+	56
+	px
+	
+	
+}
+
+#m .mod a {
+	margin: 3px
+}
+
+#m .mod a:before {
+	margin-right: 10px
+}
+
+#m h1 {
+	background: none;
+	padding: 14px 16px
+}
+
+#m ul {
+	padding: 5px
+}
+
+#m:before {
+	content: none
+}
+
+
+#c1, #m2 {
+	top: 52px
+}
+
+#m2 .menu {
+	padding-right: 5px;
+	position: initial;
+	width: calc(100% - 8px);
+	padding: 2px 6px 2px 0
+}
+
+#m2.jm+.c-user {
+	background: #28689f;
+	box-shadow: none;
+	border: 0;
+	display: block;
+	width: auto;
+	left: 0;
+	top: 0;
+	right: 46px
+}
+
+#m1.at:before {
+	background-position: -1px -4320px
+}
+
+.mod:not (.show ):before {
+	margin: 20px -36px 0 0
+}
+
+fieldset label ~ textarea, fieldset label ~ .tam-max, .lm label ~
+	textarea, .lm label ~ .tam-max {
+	width: calc(100% - 6px)
+}
+
+.lm label ~ .auto-comp, label ~ .auto-comp {
+	margin-left: 0
+}
+
+}
+@media print {
+	#c1, #m ul, .op, #n, .prop-pa, .su, #r, h4, #c5, h2 a, .no-im, #u2 {
+		display: none
+	}
+	#c1:not (.no ) ~ #c2, #c1:not (.no ) ~ * #c2 {
+		margin-left: 0
+	}
+	#c {
+		padding: 10px 0 0
+	}
+	#m h1, h1 {
+		padding: 0 0 10px
+	}
+	#m h1, h1, h2 {
+		color: #000
+	}
+	#m {
+		border-bottom: 1px solid;
+		margin: 0 0 10px
+	}
+	#m, .t1 th {
+		border-color: #cacdce;
+		box-shadow: none
+	}
+	h1:before, [class^="logo-"]:before {
+		content: "PMMG - ";
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+		display: inline;
+		vertical-align: inherit;
+		width: auto
+	}
+	.marcadagua text {
+		opacity: .32
+	}
+}

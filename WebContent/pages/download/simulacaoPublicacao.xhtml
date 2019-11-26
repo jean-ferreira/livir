@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"      
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:body>
+		<ui:composition template="/pages/basicTemplate.xhtml">
+			<ui:define name="breadcrumb">
+				<p:breadCrumb>
+					<p:menuitem value="Home" url="#" />
+					<p:menuitem value="Boletim Informatizado" url="#" />
+					<p:menuitem value="Publicação" url="#" />
+					<p:menuitem value="Simulação de Publicação" action="simulacaoPublicacao" url="#" />
+					<p:menuitem value="Download PDF" url="#" />
+				</p:breadCrumb>
+			</ui:define>
+			<ui:define name="content">
+				<ui:include src="/pages/includes/dadosMilitar.xhtml" />
+				<p:separator />
+				<h:form id="idFormSimulacaoPublicacao">
+					<p:panel id="simulacaoPublicacao" header="Download PDF">
+						<h:outputText value="O arquivo foi gerado com sucesso. Clique no botão para baixar." />
+						<div align="center">
+							<p:commandButton id="commandButtonSimular" ajax="false" value="Baixar PDF" >
+								<p:fileDownload value="#{publicacaoMB.file}" />
+							</p:commandButton>
+							<p:commandButton id="commandButtonVoltar" value="Voltar" action="simulacaoPublicacao" />
+						</div>
+					</p:panel>
+				</h:form>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</html>

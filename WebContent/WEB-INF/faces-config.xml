@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/pages/error.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>paginaErro</from-outcome>
+			<to-view-id>/pages/paginaErro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- ################################ Pinguco ######################### -->
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>controleLivro</from-outcome>
+			<to-view-id>/pages/livro.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>recuperaLivro</from-outcome>
+			<to-view-id>/pages/recuperaLivro.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>controleAutor</from-outcome>
+			<to-view-id>/pages/pinguco.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ################################ Pinguco ######################### -->
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>controleGenero</from-outcome>
+			<to-view-id>/pages/genero.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ################################ Pinguco ######################### -->
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>controleEmprestimo</from-outcome>
+			<to-view-id>/pages/emprestimo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>controleRenovacao</from-outcome>
+			<to-view-id>/pages/renovacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ################################ Menu ######################### -->
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>menu</from-outcome>
+			<to-view-id>/pages/menu.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

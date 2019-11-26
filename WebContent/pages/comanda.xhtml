@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/pages/basicTemplate.xhtml">
+		<p:graphicImage url="/images/header.png" />
+		<ui:define name="breadcrumb">
+			<p:breadCrumb>
+				<p:menuitem value="Home" url="#" />
+				<p:menuitem value="Cachaçaria" url="#" />
+				<p:menuitem value="Comanda" action="crudComanda" url="#" />
+			</p:breadCrumb>
+		</ui:define>
+		<ui:define name="content">
+			<h:form id="idFormRodape">
+
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+				<p align="right">
+					<p:growl id="growl" life="100" />     
+   						<p:commandButton value="  Gravar  " id="ajax" update="growl, idFormRodape" actionListener="#{comandaMB.gravar}" styleClass="ui-priority-primary" />
+ 				</p>	
+				<p:panel id="idPanelRodape" header="Cadastro Comanda">
+					<div class="ui-fluid">
+							<p:panelGrid columns="1" columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"  styleClass="ui-panelgrid-blank">							  
+								<p:column>
+									<p:outputLabel for="button" value="Data" />
+        							<p:calendar id="button" value="#{comandaMB.comanda.dataComanda}" showOn="button" />									
+								</p:column>				
+								<p:column>
+									<p:outputLabel for="button" value="Clientes" />
+        							<p:pickList id="pickList" value="#{comandaMB.clientes}" var="clientes" converter="PingucoConverter" itemLabel="#{clientes.nome}" itemValue="#{clientes}" />									
+								</p:column>
+							</p:panelGrid>
+					</div>
+				</p:panel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

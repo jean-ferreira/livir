@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/pages/basicTemplate.xhtml">
+		<p:graphicImage url="/images/header.png" />
+		<ui:define name="breadcrumb">
+			<p:breadCrumb>
+				<p:menuitem value="Home" url="#" />
+				<p:menuitem value="Quantitativo" url="#" />
+				<p:menuitem value="GREG" action="crudCarro" url="#" />
+			</p:breadCrumb>
+		</ui:define>
+		<ui:define name="content">
+			<h:form id="idFormRodape">
+
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+				<p:panel id="idPanelRodape" header="Gráfico">
+					<div class="ui-fluid">
+						<p:panelGrid columns="1"
+							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
+							styleClass="ui-panelgrid-blank">
+							<h:panelGrid columns="2" columnClasses="left,right"
+								style="width:100%">
+								<p:chart type="bar" model="#{pingucoMB.barModel}" style="width:800px;height:400px"/>
+<br /><br />
+								<p:chart type="pie" model="#{pingucoMB.pieModel1}" style="width:400px;height:300px" />
+								<br></br>
+								<p:chart type="pie" model="#{pingucoMB.pieModel2}" style="width:400px;height:300px" />
+															</h:panelGrid>
+						</p:panelGrid>
+					</div>
+				</p:panel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

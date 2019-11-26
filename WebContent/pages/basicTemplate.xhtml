@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"      
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head>
+		<style type="text/css">
+			body {
+				font-size:12px;
+			}
+			
+			
+			
+			.buttons {
+				position: relative;
+				margin: 3px;
+				padding-left: 5px;
+				padding-bottom: 5px;
+				text-align: right;
+			}
+			
+			.ui-menu {
+				width: auto;
+			}
+			
+			.ui-panelgrid .ui-panelgrid-cell {border:none;border-style:none}
+			.pesquisaSup {border:none; border-style:none}
+			.pesquisaSup tr {border:none;border-style:none}
+			.pesquisaSup td {border:none;border-style:none}
+			.ui-corner-all {border:none;border-style:none}
+			.pesquisaGrid {background-color:#000;}
+			.ui-widget-content {border:none;border-style:none}
+		</style>
+
+	<script type="text/javascript">
+		function startFaDwn() {
+			PF('statusDialog').show();
+		}
+		function stopFaDwn() {
+			PF('statusDialog').hide();
+		}
+	</script>
+	<title>
+			<ui:insert name="title">Cachaçaria</ui:insert>
+		</title>
+</h:head>
+
+	<body>
+		<div class="ui-g">
+			<h:graphicImage url="/images/header.png" width="100%"></h:graphicImage>
+			<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+				<p:graphicImage url="/images/progress.gif" />
+			</p:dialog>
+			<p:ajaxStatus onstart="PF('statusDialog').show()" onerror="PF('statusDialog').hide()" oncomplete="PF('statusDialog').hide()" onsuccess="PF('statusDialog').hide()" />
+			<div class="ui-g-12 ui-md-12 ui-lg-12">
+				<ui:insert name="breadcrumb" />
+			</div>
+			<div class="ui-g-2 ui-md-12 ui-lg-2">
+				<ui:insert name="menu">
+					<ui:include src="/pages/includes/menu.xhtml" />
+				</ui:insert>
+			</div>
+			<div class="ui-g-12 ui-md-12 ui-lg-10">
+				<ui:insert name="content" />
+			</div>
+		</div>
+	</body>
+</html>

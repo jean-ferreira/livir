@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Mapeamento da Classes -->
+		<property name="show_sql">false</property>
+		<property name="format_sql">false</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/biblioteca</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		<mapping class="br.com.promove.entidade.Usuario" />
+		<mapping class="br.com.promove.entidade.Emprestimo" />
+		<mapping class="br.com.promove.entidade.Livro" />
+		<mapping class="br.com.promove.entidade.Genero" />
+		<mapping class="br.com.promove.entidade.Renovacao" />
+		<mapping class="br.com.promove.entidade.Autor" />
+		<mapping class="br.com.promove.entidade.Renovacao" />
+	</session-factory>
+
+</hibernate-configuration>

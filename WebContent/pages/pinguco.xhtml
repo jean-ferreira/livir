@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/pages/basicTemplate.xhtml">
+		<p:graphicImage url="/images/header.png" />
+		<ui:define name="breadcrumb">
+			<p:breadCrumb>
+				<p:menuitem value="Home" url="#" />
+				<p:menuitem value="Cachaçaria" url="#" />
+				<p:menuitem value="Pinguço" action="crudPinguço" url="#" />
+			</p:breadCrumb>
+		</ui:define>
+		<ui:define name="content">
+			<h:form id="idFormRodape">
+
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+				<p align="right">
+					<p:growl id="growl" life="100" />     
+   						<p:commandButton value="  Gravar  " id="ajax" update="growl, idFormRodape" actionListener="#{pingucoMB.gravar}" styleClass="ui-priority-primary" />
+ 				</p>	
+				<p:panel id="idPanelRodape" header="Cadastro Pinguço">
+					<div class="ui-fluid">
+						 <p:column>
+									<p:graphicImage url="/images/pinguco.jpg"></p:graphicImage> 
+						</p:column>
+						<p:panelGrid columns="2" columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"  styleClass="ui-panelgrid-blank">							  
+								<p:column>
+									<p:outputLabel for="marca" value="Nome: " />
+									<p:inputText id="marca" value="#{pingucoMB.pinguco.nome}" size="30" maxlength="30"></p:inputText>
+								</p:column>	
+								<p:column>
+									<p:outputLabel for="console" value="Tipo Pinga" />
+							        <p:selectOneMenu id="console" value="#{pingucoMB.pinguco.tipoPinga}">
+							            <f:selectItem itemLabel="--Selecione--" itemValue="" />
+							            <f:selectItem itemLabel="Brasileirinha" itemValue="Brasileirinha" />
+							            <f:selectItem itemLabel="Salinas" itemValue="Salinas" />
+							            <f:selectItem itemLabel="Copo Sujo" itemValue="Copo Sujo" />
+							            <f:selectItem itemLabel="Leite" itemValue="Leite" />
+							        </p:selectOneMenu>	
+						        </p:column>			
+						</p:panelGrid>
+						<p:panelGrid columns="1" columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"  styleClass="ui-panelgrid-blank">
+							<p:column>
+									<p:outputLabel for="modelo" value="Qtde Pingas :" />
+									<p:inputText id="modelo" value="#{pingucoMB.pinguco.qtdePingas}" size="10" maxlength="10"></p:inputText>
+								</p:column>								
+								<p:column>
+									<p:outputLabel for="valorPinga" value="Valor : " />
+									<p:inputText id="valorPinga" value="#{pingucoMB.pinguco.valorPinga}" size="7" maxlength="7"></p:inputText>
+								</p:column>	
+								
+								<p:column>
+									<p:outputLabel for="safra" value="safra : " />
+									<p:inputText id="safra" value="#{pingucoMB.pinguco.safra}" size="30" maxlength="30"></p:inputText>
+								</p:column>	
+																				        
+						</p:panelGrid>
+					</div>
+				</p:panel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
