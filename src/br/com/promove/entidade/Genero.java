@@ -27,8 +27,10 @@ public class Genero {
 	@Column(name = "id_genero")
 	private int idGenero;
 
+	/*
 	@Transient
 	private List<Genero> generos;
+	*/
 
 	@Column(name = "genero")
 	private String genero;
@@ -36,6 +38,7 @@ public class Genero {
 	@Column(name = "descricao")
 	private String descricao;
 
+	/*
 	public List<Genero> getGeneros() {
 		return generos;
 	}
@@ -43,6 +46,7 @@ public class Genero {
 	public void setGeneros(List<Genero> generos) {
 		this.generos = generos;
 	}
+	*/
 
 	public int getIdGenero() {
 		return idGenero;

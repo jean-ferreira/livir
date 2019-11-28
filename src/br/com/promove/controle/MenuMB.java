@@ -31,10 +31,10 @@ public class MenuMB extends BaseMB {
 
 	@PostConstruct
 	public void init() {
-		usuario = "Nelson";
+		usuario = "NelsonDaCapitinga";
 		login = new Login();
 
-		login.setUsuario("Nelson");
+		login.setUsuario("NelsonDaCapitinga");
 
 		VerificaPermissao p = new VerificaPermissao();
 

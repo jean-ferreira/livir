@@ -10,7 +10,7 @@ import br.com.promove.entidade.Livro;
 public class PopTest {
 	
 	public static void main(String[] args) {
-		/*
+		
 		String[] generos = {"Épico", "Fábula", "Epopeia", "Novela", "Conto", "Crônica", "Ensaio", "Romance"};
 		String[] autores = {"J.K. Rowling", "Stephen King", "J. R. R.", "Jane Austen", "Paulo Coelho"};
 		
@@ -37,7 +37,7 @@ public class PopTest {
 	
 		livroDAO.incluir(livro);
 		
-		
+		/*
 		Genero g = new Genero();
 		g.addGeneros();
 		System.out.println(g.getGeneros());

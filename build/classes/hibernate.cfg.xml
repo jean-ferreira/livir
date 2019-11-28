@@ -17,7 +17,7 @@
 		<mapping class="br.com.promove.entidade.Genero" />
 		<mapping class="br.com.promove.entidade.Renovacao" />
 		<mapping class="br.com.promove.entidade.Autor" />
-		<mapping class="br.com.promove.entidade.Renovacao" />
+		
 	</session-factory>
 
 </hibernate-configuration>

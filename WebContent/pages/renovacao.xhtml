@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/pages/basicTemplate.xhtml">
+		<p:graphicImage url="/images/header.png" />
+		<ui:define name="breadcrumb">
+			<p:breadCrumb>
+				<p:menuitem value="Home" url="#" />
+				<p:menuitem value="Livir" url="#" />
+				<p:menuitem value="Renovação" action="crudRenovacao" url="#" />
+			</p:breadCrumb>
+		</ui:define>
+		<ui:define name="content">
+			<h:form id="idFormRodape">
+
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+				<p align="right">
+					<p:growl id="growl" life="100" />
+					<p:commandButton value="  Salvar  " id="ajax"
+						update="growl, idFormRodape" actionListener="#{generoMB.salvar}"
+						styleClass="ui-priority-primary" />
+				</p>
+				<p:panel id="idPanelRodape" header="Cadastro de Renovação">
+					<div class="ui-fluid">
+
+						<p:panelGrid columns="3"
+							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
+							styleClass="ui-panelgrid-blank">
+							<p:column>
+								<p:column>
+								<p:outputLabel for="emprestimoID" value="Numero do emprestimo: " />
+								<p:inputNumber id="emprestimoID" value="#{emprestimoMB.emprestimo.renovacao}"
+									size="10" maxlength="10"></p:inputNumber>
+								</p:column>
+								<p:outputLabel for="dataAtual" value="Data Atual " />
+								<p:calendar id="dataAtual" value="#{emprestimoMB.emprestimo.dataAtual}" pattern="dd/MM/yyyy" label="Data Atual">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</p:calendar>								
+							</p:column>							
+							<p:column>
+								<p:outputLabel for="dataRenovada" value="Data de renovação: " />
+								<p:calendar id="dataRenovada" value="#{emprestimoMB.emprestimo.dataRenovada}" pattern="dd/MM/yyyy" label="Data de Renovação">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</p:calendar>								
+							</p:column>							
+						</p:panelGrid>
+					</div>
+				</p:panel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

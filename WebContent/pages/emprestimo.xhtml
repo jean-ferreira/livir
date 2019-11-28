@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/pages/basicTemplate.xhtml">
+		<p:graphicImage url="/images/header.png" />
+		<ui:define name="breadcrumb">
+			<p:breadCrumb>
+				<p:menuitem value="Home" url="#" />
+				<p:menuitem value="Livir" url="#" />
+				<p:menuitem value="Empréstimo" action="crudEmprestimo" url="#" />
+			</p:breadCrumb>
+		</ui:define>
+		<ui:define name="content">
+			<h:form id="idFormRodape">
+
+				<p:messages id="messages" showDetail="true" autoUpdate="true"
+					closable="true" />
+				<p align="right">
+					<p:growl id="growl" life="100" />
+					<p:commandButton value="  Salvar  " id="ajax"
+						update="growl, idFormRodape"
+						actionListener="#{emprestimoMB.salvar}"
+						styleClass="ui-priority-primary" />
+				</p>
+				<p:panel id="idPanelRodape" header="Cadastro de Empréstimos">
+					<div class="ui-fluid">
+						<p:column>
+
+						</p:column>
+						<p:panelGrid columns="2"
+							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
+							styleClass="ui-panelgrid-blank">
+							<p:column>
+								<p:outputLabel for="dataRetirada" value="Data de retirada: " />
+								<p:calendar id="dataRetirada" value="#{emprestimoMB.emprestimo.dataRetirada}" pattern="dd/MM/yyyy" label="Data de Renovação">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</p:calendar>								
+							</p:column>
+							<p:column>
+								<p:outputLabel for="dataDevolucao" value="Data de devolução: " />
+								<p:calendar id="dataDevolucao" value="#{emprestimoMB.emprestimo.dataDevolucao}" pattern="dd/MM/yyyy" label="Data de Renovação">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</p:calendar>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="condicaoRetirada"
+									value="Condicao do livro na retirada: " />
+								<p:inputText id="condicaoRetirada"
+									value="#{emprestimoMB.emprestimo.condicaoLivroRetirada}"
+									size="30" maxlength="30"></p:inputText>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="condicaoDevolucao"
+									value="Condicao do livro na devolução: " />
+								<p:inputText id="condicaoDevolucao"
+									value="#{emprestimoMB.emprestimo.condicaoLivroDevolucao}"
+									size="30" maxlength="30"></p:inputText>
+							</p:column>
+						</p:panelGrid>
+						<p:panelGrid columns="5"
+							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
+							styleClass="ui-panelgrid-blank">
+							<p:column>
+								<p:outputLabel for="diasAtraso" value="Dias de atraso:"/>
+								<p:inputNumber id="diasAtraso"
+									value="#{emprestimoMB.emprestimo.qntDiasAtraso}" size="10" maxlength="10"  decimalPlaces="0"></p:inputNumber >
+							</p:column>
+							<p:column>
+								<p:outputLabel for="valorMulta" value="Valor da multa: " />
+								<p:inputNumber id="valorMulta"
+									value="#{emprestimoMB.emprestimo.valorMulta}" size="10" maxlength="7"></p:inputNumber>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="statusPagamento" value="Pagamento: " />
+								<p:selectOneMenu id="statusPagamento" value="#{emprestimoMB.emprestimo.statusPagamento}">								
+									<f:selectItem itemLabel="Em aberto" itemValue="aberto" />
+									<f:selectItem itemLabel="Pago" itemValue="pago" />									
+								</p:selectOneMenu>	
+							</p:column>
+							<p:column>
+								<p:outputLabel for="renova" value="Renovação: " />
+								<p:inputText id="renova"
+									value="#{emprestimoMB.emprestimo.renovacao}" size="10" maxlength="7"></p:inputText>
+							</p:column>
+							<p:column>
+								<p:outputLabel for="statusCadastro" value="Status do cadastro: " />
+								<p:selectOneMenu id="statusCadastro" value="#{emprestimoMB.emprestimo.statusCadastro}">								
+									<f:selectItem itemLabel="Aberto" itemValue="false" />
+									<f:selectItem itemLabel="Fechado" itemValue="true" />									
+								</p:selectOneMenu>
+							</p:column>
+						</p:panelGrid>
+						<p:panelGrid columns="1"
+							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
+							styleClass="ui-panelgrid-blank">
+							<p:column>
+								<p:outputLabel for="obs" value="Observações: " />
+								<p:inputTextarea id="obs"
+									value="#{emprestimoMB.emprestimo.observacao}" size="300"
+									maxlength="300"></p:inputTextarea>
+									
+							</p:column>						
+						</p:panelGrid>						
+					</div>
+				</p:panel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

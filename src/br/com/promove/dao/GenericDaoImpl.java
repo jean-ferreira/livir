@@ -49,7 +49,7 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 		session.close();
 		return results;
 	}
-
+	
 	public void excluir(T obj) {
 		Session session = HibernateUtil.getSession();
 		Transaction t = session.beginTransaction();

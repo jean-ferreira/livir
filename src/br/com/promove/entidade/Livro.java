@@ -12,6 +12,10 @@ import javax.persistence.Table;
 @Table(name = "LIVROS")
 public class Livro {
 
+	public Livro() {
+
+	}
+
 	public Livro(String titulo, Autor autor, Genero genero) {
 		this.titulo = titulo;
 		setAutor(autor);
@@ -26,6 +30,7 @@ public class Livro {
 		this.numeroPaginas = paginas;
 		this.situacao = situacao;
 	}
+	
 
 	@Id
 	@GeneratedValue
@@ -36,11 +41,11 @@ public class Livro {
 	private String titulo;
 
 	@ManyToOne
-	@JoinColumn(name = "id_autor", nullable = false )
+	@JoinColumn(name = "id_autor", nullable = false)
 	private Autor autor;
 
 	@ManyToOne
-	@JoinColumn(name = "id_genero", nullable = false )
+	@JoinColumn(name = "id_genero", nullable = false)
 	private Genero genero;
 
 	@Column(name = "numero_registro")
@@ -107,5 +112,5 @@ public class Livro {
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
 	}
-	
+
 }

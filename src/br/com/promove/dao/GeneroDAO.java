@@ -1,10 +1,12 @@
 package br.com.promove.dao;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import br.com.promove.entidade.Genero;
 import br.com.promove.util.HibernateUtil;
-import org.hibernate.Query;
 
 public class GeneroDAO extends GenericDaoImpl<Genero>{
 	
@@ -24,6 +26,6 @@ public class GeneroDAO extends GenericDaoImpl<Genero>{
 		} catch (Exception e) {
 			return null;
 		}
-	}
+	}	
 
 }

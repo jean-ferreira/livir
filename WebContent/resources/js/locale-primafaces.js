@@ -3,7 +3,7 @@ PrimeFaces.locales['pt_BR'] = {
     prevText: 'Anterior',
     nextText: 'Prximo',
     currentText: 'Comeo',
-    monthNames: ['Janeiro','Fevereiro','Maro','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
     monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul','Ago','Set','Out','Nov','Dez'],
     dayNames: ['Domingo','Segunda','Tera','Quarta','Quinta','Sexta','Sbado'],
     dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sb'],

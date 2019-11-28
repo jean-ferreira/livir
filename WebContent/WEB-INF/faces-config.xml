@@ -19,8 +19,7 @@
 		</navigation-case>
 	</navigation-rule>
 
-
-	<!-- ################################ Pinguco ######################### -->
+	<!-- ################################ LIvro ######################### -->
 
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
@@ -31,14 +30,10 @@
 		<navigation-case>
 			<from-outcome>recuperaLivro</from-outcome>
 			<to-view-id>/pages/recuperaLivro.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>controleAutor</from-outcome>
-			<to-view-id>/pages/pinguco.xhtml</to-view-id>
-		</navigation-case>
+		</navigation-case>		
 	</navigation-rule>
 
-	<!-- ################################ Pinguco ######################### -->
+	<!-- ################################ Genero ######################### -->
 
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
@@ -47,8 +42,18 @@
 			<to-view-id>/pages/genero.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+		
+	<!-- ################################ Autor ######################### -->
 
-	<!-- ################################ Pinguco ######################### -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>controleAutor</from-outcome>
+			<to-view-id>/pages/autor.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- ################################ Emprestimo ######################### -->
 
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
@@ -58,13 +63,15 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<!-- ################################ Renovacao ######################### -->
+	
 	<navigation-rule>
 		<from-view-id>*</from-view-id>
 		<navigation-case>
 			<from-outcome>controleRenovacao</from-outcome>
 			<to-view-id>/pages/renovacao.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>
+	</navigation-rule>	
 
 	<!-- ################################ Menu ######################### -->
 
