@@ -13,7 +13,7 @@ public class Autor {
 	public Autor() {
 		
 	}
-	
+
 	public Autor(String nome) {
 		this.nome = nome;
 	}

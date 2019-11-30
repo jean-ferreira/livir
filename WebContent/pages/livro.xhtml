@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:j="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
 <h:body>
 	<ui:composition template="/pages/basicTemplate.xhtml">
 		<p:graphicImage url="/images/header.png" />
@@ -23,7 +24,7 @@
 				<p align="right">
 					<p:growl id="growl" life="100" />
 					<p:commandButton value="  Salvar  " id="ajax"
-						update="growl, idFormRodape" actionListener="#{livroMB.salvar}"
+						update="growl, idFormRodape" actionListener="#{livroMB.salvar()}"
 						styleClass="ui-priority-primary" />
 				</p>
 				<p:panel id="idPanelRodape" header="Cadastro de Livros">
@@ -36,22 +37,24 @@
 							styleClass="ui-panelgrid-blank">
 							<p:column>
 								<p:outputLabel for="titulo" value="Titulo: " />
-								<p:inputText id="titulo" value="#{generoMB.genero.genero}"
+								<p:inputText id="titulo" value="#{livroMB.livro.titulo}"
 									size="30" maxlength="30"></p:inputText>
 							</p:column>
+							
 							<p:column>
-								<p:outputLabel for="autor" value="Autor: " />
-								<p:inputText id="autor" value="#{generoMB.genero.genero}"
-									size="30" maxlength="30"></p:inputText>
-							</p:column>
-							<p:column>
-								<p:outputLabel for="generos" value="Genero" />
-								<p:selectOneMenu id="generos" value="#{generoMB.generos.genero}">
+								<p:outputLabel for="autor" value="Autor:" />
+								<p:selectOneMenu id="autor" value="#{livroMB.livro.autor}">
+							            <j:selectItems value="#{autorMB.getAutores()}"></j:selectItems>
+							        </p:selectOneMenu>
+							</p:column>							
 
-									<f:selectItem itemValue="#{generoMB.generos.genero}" />
-									<!-- <f:ajax event="change" execute="@this" listener="#{Genero.teste}"/> -->
-								</p:selectOneMenu>
+							<p:column>
+								<p:outputLabel for="genero" value="Genero:" />
+								<p:selectOneMenu id="genero" value="#{livroMB.livro.genero}">
+							            <j:selectItems value="#{generoMB.getGeneros()}"></j:selectItems>
+							        </p:selectOneMenu>
 							</p:column>
+
 							<p:column>
 								<p:outputLabel for="situacao" value="Situação: " />
 								<p:inputText id="situacao" value="#{livroMB.livro.situacao}"
@@ -64,12 +67,14 @@
 							<p:column>
 								<p:outputLabel for="nPaginas" value="Numero de páginas:" />
 								<p:inputNumber id="nPaginas"
-									value="#{livroMB.livro.numeroPaginas}" size="10" maxlength="10" decimalPlaces="0"></p:inputNumber>
+									value="#{livroMB.livro.numeroPaginas}" size="10" maxlength="10"
+									decimalPlaces="0"></p:inputNumber>
 							</p:column>
 							<p:column>
 								<p:outputLabel for="nRegistro" value="Número de Registro : " />
 								<p:inputNumber id="nRegistro"
-									value="#{livroMB.livro.numeroRegistro}" size="7" maxlength="7" decimalPlaces="0"></p:inputNumber>
+									value="#{livroMB.livro.numeroRegistro}" size="7" maxlength="7"
+									decimalPlaces="0"></p:inputNumber>
 							</p:column>
 						</p:panelGrid>
 					</div>
