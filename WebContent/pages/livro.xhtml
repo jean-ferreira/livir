@@ -24,7 +24,7 @@
 				<p align="right">
 					<p:growl id="growl" life="100" />
 					<p:commandButton value="  Salvar  " id="ajax"
-						update="growl, idFormRodape" actionListener="#{livroMB.salvar()}"
+						update="growl, idFormRodape" actionListener="#{livroMB.salvar}"
 						styleClass="ui-priority-primary" />
 				</p>
 				<p:panel id="idPanelRodape" header="Cadastro de Livros">
@@ -43,18 +43,19 @@
 							
 							<p:column>
 								<p:outputLabel for="autor" value="Autor:" />
-								<p:selectOneMenu id="autor" value="#{livroMB.livro.autor}">
+								<p:selectOneMenu id="autor" value="#{livroMB.livro.autor}" converter="AutorConverter">
 							            <j:selectItems value="#{autorMB.getAutores()}"></j:selectItems>
 							        </p:selectOneMenu>
-							</p:column>							
-
+							</p:column>		
+							
 							<p:column>
-								<p:outputLabel for="genero" value="Genero:" />
-								<p:selectOneMenu id="genero" value="#{livroMB.livro.genero}">
+								<p:outputLabel for="genero" value="Gênero" />
+								<p:selectOneMenu id="genero" value="#{livroMB.livro.genero}" converter="GeneroConverter">
 							            <j:selectItems value="#{generoMB.getGeneros()}"></j:selectItems>
 							        </p:selectOneMenu>
-							</p:column>
+							</p:column>						
 
+							
 							<p:column>
 								<p:outputLabel for="situacao" value="Situação: " />
 								<p:inputText id="situacao" value="#{livroMB.livro.situacao}"
