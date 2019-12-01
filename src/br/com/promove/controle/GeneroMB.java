@@ -8,8 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 
 import br.com.promove.dao.GeneroDAO;
 import br.com.promove.entidade.Genero;
@@ -26,6 +29,19 @@ public class GeneroMB {
 	public void init() {
 		genero = new Genero();
 		dao = new GeneroDAO();		
+	}
+	
+	public void salvar(ActionEvent actionEvent) {
+		if (genero != null) {
+			dao.incluir(genero);
+		}
+		genero = new Genero();
+		addMessage("Cadastrado!");
+	}
+	
+	public void addMessage(String summary) {
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
+		FacesContext.getCurrentInstance().addMessage(null, message);
 	}
 
 	public List<String> getGeneros() {

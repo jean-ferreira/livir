@@ -1,5 +1,7 @@
 package br.com.promove.entidade;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "LIVROS")
-public class Livro {
+public class Livro implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public Livro() {
 
@@ -41,11 +48,11 @@ public class Livro {
 	private String titulo;
 
 	@ManyToOne
-	@JoinColumn(name = "id_autor", nullable = false)
+	@JoinColumn(name = "id_autor")
 	private Autor autor;
 
 	@ManyToOne
-	@JoinColumn(name = "id_genero", nullable = false)
+	@JoinColumn(name = "id_genero")
 	private Genero genero;
 
 	@Column(name = "numero_registro")

@@ -12,7 +12,7 @@
 			<p:breadCrumb>
 				<p:menuitem value="Home" url="#" />
 				<p:menuitem value="Livir" url="#" />
-				<p:menuitem value="Autor" action="crudGenero" url="#" />
+				<p:menuitem value="Autor" action="crudAutor" url="#" />
 			</p:breadCrumb>
 		</ui:define>
 		<ui:define name="content">
@@ -23,19 +23,29 @@
 				<p align="right">
 					<p:growl id="growl" life="100" />
 					<p:commandButton value="  Salvar  " id="ajax"
+<<<<<<< HEAD
 						update="growl, idFormRodape" action="#{autorMb.salvar()}"
+=======
+						update="growl, idFormRodape" actionListener="#{autorMB.salvar}"
+>>>>>>> a03ba0fa6140518c178aa129c788d36d8a5a2a62
 						styleClass="ui-priority-primary" />
 				</p>
-				<p:panel id="idPanelRodape" header="Cadastro de Autor">
+				<p:panel id="idPanelRodape" header="Cadastro de Autores">
 					<div class="ui-fluid">
 
 						<p:panelGrid columns="1"
 							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
 							styleClass="ui-panelgrid-blank">
 							<p:column>
+<<<<<<< HEAD
 								<p:outputLabel for="autor" value="Autor:" />
 								<p:inputText id="autor" value="#{autorMB.autor.nome}">
 								</p:inputText>
+=======
+								<p:outputLabel for="nome" value="Nome do Autor: " />
+								<p:inputText id="nome" value="#{autorMB.autor.nome}" size="30"
+									maxlength="30"></p:inputText>
+>>>>>>> a03ba0fa6140518c178aa129c788d36d8a5a2a62
 							</p:column>
 						</p:panelGrid>
 
