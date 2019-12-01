@@ -32,23 +32,30 @@
 						<p:panelGrid columns="3"
 							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
 							styleClass="ui-panelgrid-blank">
+							
 							<p:column>
-								<p:column>
 								<p:outputLabel for="emprestimoID" value="Numero do emprestimo: " />
-								<p:inputNumber id="emprestimoID" value="#{emprestimoMB.emprestimo.renovacao}"
-									size="10" maxlength="10"></p:inputNumber>
-								</p:column>
+								<p:inputNumber id="emprestimoID"
+									value="#{emprestimoMB.emprestimo.renovacao}" size="10"
+									maxlength="10"></p:inputNumber>
+							</p:column>
+							<p:column>
 								<p:outputLabel for="dataAtual" value="Data Atual " />
-								<p:calendar id="dataAtual" value="#{emprestimoMB.emprestimo.dataAtual}" pattern="dd/MM/yyyy" label="Data Atual">
+								<p:calendar id="dataAtual"
+									value="#{emprestimoMB.emprestimo.dataAtual}"
+									pattern="dd/MM/yyyy" label="Data Atual">
 									<f:convertDateTime pattern="dd/MM/yyyy" />
-								</p:calendar>								
-							</p:column>							
+								</p:calendar>
+							</p:column>
 							<p:column>
 								<p:outputLabel for="dataRenovada" value="Data de renovação: " />
-								<p:calendar id="dataRenovada" value="#{emprestimoMB.emprestimo.dataRenovada}" pattern="dd/MM/yyyy" label="Data de Renovação">
+								<p:calendar id="dataRenovada"
+									value="#{emprestimoMB.emprestimo.dataRenovada}"
+									pattern="dd/MM/yyyy" label="Data de Renovação">
 									<f:convertDateTime pattern="dd/MM/yyyy" />
-								</p:calendar>								
-							</p:column>							
+								</p:calendar>
+							</p:column>
+
 						</p:panelGrid>
 					</div>
 				</p:panel>

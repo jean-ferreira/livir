@@ -63,7 +63,6 @@ public class AutorMB {
 		FacesContext.getCurrentInstance().addMessage(null, message);
 	}
 	
-	
 
 	public Autor getAutor() {
 		return autor;

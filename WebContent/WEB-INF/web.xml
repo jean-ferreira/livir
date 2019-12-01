@@ -37,6 +37,6 @@
   </mime-mapping>
   <context-param>
     <param-name>primefaces.THEME</param-name>
-    <param-value>casablanca</param-value>
+    <param-value>dark-hive</param-value>
   </context-param>
 </web-app>

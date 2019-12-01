@@ -39,8 +39,9 @@
 							</p:column>
 							<p:column>
 								<p:outputLabel for="desc" value="Descrição: " />
-								<p:inputTextarea id="desc" value="#{generoMB.genero.descricao}" size="300"
-									maxlength="30"></p:inputTextarea>
+								<p:inputTextarea id="desc" value="#{generoMB.genero.descricao}" autoResize="false" size="300"
+									maxlength="300" counter="display" counterTemplate="{0} Caracteres restantes."></p:inputTextarea>
+								<p:outputLabel id="display" for="desc" value="Descrição: " />
 							</p:column>
 
 						</p:panelGrid>

@@ -23,17 +23,17 @@
 				<p align="right">
 					<p:growl id="growl" life="100" />
 					<p:commandButton value="  Salvar  " id="ajax"
-						update="growl, idFormRodape" action="#{autorMb.salvar}"
+						update="growl, idFormRodape" action="#{autorMb.salvar()}"
 						styleClass="ui-priority-primary" />
 				</p>
 				<p:panel id="idPanelRodape" header="Cadastro de Autor">
 					<div class="ui-fluid">
 
-						<p:panelGrid columns="2"
+						<p:panelGrid columns="1"
 							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
 							styleClass="ui-panelgrid-blank">
 							<p:column>
-								<p:outputLabel for="autor" value="Autor: " />
+								<p:outputLabel for="autor" value="Autor:" />
 								<p:inputText id="autor" value="#{autorMB.autor.nome}">
 								</p:inputText>
 							</p:column>

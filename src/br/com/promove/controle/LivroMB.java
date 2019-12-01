@@ -28,15 +28,13 @@ public class LivroMB {
 			dao.incluir(livro);
 		}
 		livro = new Livro();
-		addMessage("Gravado!!");
+		addMessage("Livro cadastrado!!");
 	}
 
 	public void addMessage(String summary) {
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
 		FacesContext.getCurrentInstance().addMessage(null, message);
-	}
-	
-	
+	}		
 
 	public Livro getLivro() {
 		return livro;
