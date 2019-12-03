@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+import br.com.promove.entidade.Autor;
 import br.com.promove.entidade.Genero;
 import br.com.promove.util.HibernateUtil;
 
@@ -12,6 +13,14 @@ public class GeneroDAO extends GenericDaoImpl<Genero>{
 	
 	public GeneroDAO() {
 		super(Genero.class);
+	}
+	
+	public List<Genero> listGenero() {
+		Session session = HibernateUtil.getSession();
+		
+		List<Genero> listGeneros = session.createQuery("FROM Genero g").list();
+		session.close();
+		return listGeneros;		
 	}
 	
 	public Genero recuperaGenero(int idGenero) {

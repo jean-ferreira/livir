@@ -37,13 +37,19 @@
 							styleClass="ui-panelgrid-blank">
 							<p:column>
 								<p:outputLabel for="dataRetirada" value="Data de retirada: " />
-								<p:calendar id="dataRetirada" value="#{emprestimoMB.emprestimo.dataRetirada}" pattern="dd/MM/yyyy" label="Data de Renovação">
+								<p:calendar id="dataRetirada"
+									value="#{emprestimoMB.emprestimo.dataRetirada}"
+									pattern="dd/MM/yyyy" label="Data de Renovação" required="true"
+									requiredMessage="Campo obrigatório">
 									<f:convertDateTime pattern="dd/MM/yyyy" />
-								</p:calendar>								
+								</p:calendar>
 							</p:column>
 							<p:column>
 								<p:outputLabel for="dataDevolucao" value="Data de devolução: " />
-								<p:calendar id="dataDevolucao" value="#{emprestimoMB.emprestimo.dataDevolucao}" pattern="dd/MM/yyyy" label="Data de Renovação">
+								<p:calendar id="dataDevolucao"
+									value="#{emprestimoMB.emprestimo.dataDevolucao}"
+									pattern="dd/MM/yyyy" label="Data de Renovação" required="true"
+									requiredMessage="Campo obrigatório">
 									<f:convertDateTime pattern="dd/MM/yyyy" />
 								</p:calendar>
 							</p:column>
@@ -66,32 +72,36 @@
 							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
 							styleClass="ui-panelgrid-blank">
 							<p:column>
-								<p:outputLabel for="diasAtraso" value="Dias de atraso:"/>
-								<p:inputNumber id="diasAtraso"
-									value="#{emprestimoMB.emprestimo.qntDiasAtraso}" size="10" maxlength="10"  decimalPlaces="0"></p:inputNumber >
+								<p:outputLabel for="diasAtraso" value="Dias de atraso:" />
+								<p:inputNumber id="diasAtraso" size="20" maxValue="10"
+									value="#{emprestimoMB.emprestimo.qntDiasAtraso}" maxlength="5"
+									decimalPlaces="0"></p:inputNumber>
 							</p:column>
 							<p:column>
 								<p:outputLabel for="valorMulta" value="Valor da multa: " />
-								<p:inputNumber id="valorMulta"
-									value="#{emprestimoMB.emprestimo.valorMulta}" size="10" maxlength="7"></p:inputNumber>
+								<p:inputNumber id="valorMulta" size="20" maxValue="10"
+									value="#{emprestimoMB.emprestimo.valorMulta}" maxlength="7"></p:inputNumber>
 							</p:column>
 							<p:column>
 								<p:outputLabel for="statusPagamento" value="Pagamento: " />
-								<p:selectOneMenu id="statusPagamento" value="#{emprestimoMB.emprestimo.statusPagamento}">								
+								<p:selectOneMenu id="statusPagamento"
+									value="#{emprestimoMB.emprestimo.statusPagamento}">
 									<f:selectItem itemLabel="Em aberto" itemValue="aberto" />
-									<f:selectItem itemLabel="Pago" itemValue="pago" />									
-								</p:selectOneMenu>	
+									<f:selectItem itemLabel="Pago" itemValue="pago" />
+								</p:selectOneMenu>
 							</p:column>
 							<p:column>
 								<p:outputLabel for="renova" value="Renovação: " />
 								<p:inputText id="renova"
-									value="#{emprestimoMB.emprestimo.renovacao}" size="10" maxlength="7"></p:inputText>
+									value="#{emprestimoMB.emprestimo.renovacao}" size="10" width="30"
+									maxlength="10"></p:inputText>
 							</p:column>
 							<p:column>
-								<p:outputLabel for="statusCadastro" value="Status do cadastro: " />
-								<p:selectOneMenu id="statusCadastro" value="#{emprestimoMB.emprestimo.statusCadastro}">								
-									<f:selectItem itemLabel="Aberto" itemValue="false" />
-									<f:selectItem itemLabel="Fechado" itemValue="true" />									
+								<p:outputLabel for="statusCadastro" value="Status: " />
+								<p:selectOneMenu id="statusCadastro"
+									value="#{emprestimoMB.emprestimo.statusCadastro}">
+									<f:selectItem itemLabel="Ativo" itemValue="false" />
+									<f:selectItem itemLabel="Devolvido" itemValue="true" />
 								</p:selectOneMenu>
 							</p:column>
 						</p:panelGrid>
@@ -100,12 +110,14 @@
 							styleClass="ui-panelgrid-blank">
 							<p:column>
 								<p:outputLabel for="obs" value="Observações: " />
-								<p:inputTextarea id="obs"
-									value="#{emprestimoMB.emprestimo.observacao}" size="300"
-									maxlength="300"></p:inputTextarea>
-									
-							</p:column>						
-						</p:panelGrid>						
+								<p:inputTextarea id="obs" 
+									value="#{emprestimoMB.emprestimo.observacao}"
+									maxlength="500" autoResize="false" counter="display"
+									counterTemplate="{0} Caracteres restantes."></p:inputTextarea>
+								<p:outputLabel id="display" for="obs" value="Observações: " />
+
+							</p:column>
+						</p:panelGrid>
 					</div>
 				</p:panel>
 			</h:form>

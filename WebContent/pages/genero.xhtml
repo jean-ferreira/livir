@@ -23,7 +23,7 @@
 				<p align="right">
 					<p:growl id="growl" life="100" />
 					<p:commandButton value="  Salvar  " id="ajax"
-						update="growl, idFormRodape" actionListener="#{generoMB.salvar}"
+						update="growl, idFormRodape, formList" actionListener="#{generoMB.salvar}"
 						styleClass="ui-priority-primary" />
 				</p>
 				<p:panel id="idPanelRodape" header="Cadastro de Generos">
@@ -35,7 +35,7 @@
 							<p:column>
 								<p:outputLabel for="nGenero" value="Nome: " />
 								<p:inputText id="nGenero" value="#{generoMB.genero.genero}" size="30"
-									maxlength="30"></p:inputText>
+									maxlength="30" required="true" requiredMessage="Campo obrigatório"></p:inputText>
 							</p:column>
 							<p:column>
 								<p:outputLabel for="desc" value="Descrição: " />
@@ -48,6 +48,23 @@
 
 					</div>
 				</p:panel>
+			</h:form>
+			<h:form id="formList">
+				<p:dataTable var="geList" value="#{generoMB.listGeneros}" >
+					<p:column headerText="ID" width="100" sortBy="#{geList.idGenero}" filterBy="##{geList.idGenero}" filterMatchMode="exact">
+						#{geList.idGenero}
+					</p:column>
+					<p:column headerText="Genero" width="200" sortBy="#{geList.genero}" filterBy="#{geList.genero}" filterMatchMode="contains">
+						#{geList.genero}
+					</p:column>
+					<p:column headerText="Descrição">
+						#{geList.descricao}
+					</p:column>
+					<p:column headerText="Ações" width="150">
+						<p:commandButton value="Editar" action="#{generoMB.recuperarGenero(geList)}" process="@this" update=":idFormRodape" />
+						<p:commandButton value="Excluir" action="#{generoMB.excluir(geList)}" process="@this" update="@form" />
+					</p:column>
+				</p:dataTable>
 			</h:form>
 		</ui:define>
 	</ui:composition>

@@ -1,5 +1,7 @@
 package br.com.promove.dao;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -10,6 +12,14 @@ public class AutorDAO extends GenericDaoImpl<Autor>{
 	
 	public AutorDAO() {
 		super(Autor.class);
+	}
+	
+	public List<Autor> listAutor() {
+		Session session = HibernateUtil.getSession();
+		
+		List<Autor> listAutores = session.createQuery("FROM Autor a").list();
+		session.close();
+		return listAutores;		
 	}
 	
 	public Autor recuperarAutor(int idAutor) {

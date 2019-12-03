@@ -23,11 +23,7 @@
 				<p align="right">
 					<p:growl id="growl" life="100" />
 					<p:commandButton value="  Salvar  " id="ajax"
-<<<<<<< HEAD
-						update="growl, idFormRodape" action="#{autorMb.salvar()}"
-=======
-						update="growl, idFormRodape" actionListener="#{autorMB.salvar}"
->>>>>>> a03ba0fa6140518c178aa129c788d36d8a5a2a62
+						update="growl, idFormRodape, formList" actionListener="#{autorMB.salvar}"
 						styleClass="ui-priority-primary" />
 				</p>
 				<p:panel id="idPanelRodape" header="Cadastro de Autores">
@@ -37,20 +33,30 @@
 							columnClasses="ui-grid-col-6,ui-grid-col-6" layout="grid"
 							styleClass="ui-panelgrid-blank">
 							<p:column>
-<<<<<<< HEAD
-								<p:outputLabel for="autor" value="Autor:" />
-								<p:inputText id="autor" value="#{autorMB.autor.nome}">
-								</p:inputText>
-=======
 								<p:outputLabel for="nome" value="Nome do Autor: " />
 								<p:inputText id="nome" value="#{autorMB.autor.nome}" size="30"
-									maxlength="30"></p:inputText>
->>>>>>> a03ba0fa6140518c178aa129c788d36d8a5a2a62
+									maxlength="40" required="true"
+									requiredMessage="Campo obrigatório"></p:inputText>
 							</p:column>
 						</p:panelGrid>
 
 					</div>
 				</p:panel>
+			</h:form>
+			
+			<h:form id="formList">
+				<p:dataTable var="auList" value="#{autorMB.listAutores}" >
+					<p:column headerText="ID" width="100" sortBy="#{auList.idAutor}" filterBy="#{auList.idAutor}" filterMatchMode="exact">
+						#{auList.idAutor}
+					</p:column>
+					<p:column headerText="Autor" sortBy="#{auList.nome}" filterBy="#{auList.nome}" filterMatchMode="contains">
+						#{auList.nome}
+					</p:column>
+					<p:column headerText="Ações" width="150">
+						<p:commandButton value="Editar" action="#{autorMB.recuperarAutor(auList)}" process="@this" update=":idFormRodape" />
+						<p:commandButton value="Excluir" action="#{autorMB.excluir(auList)}" process="@this" update="@form" />
+					</p:column>
+				</p:dataTable>
 			</h:form>
 		</ui:define>
 	</ui:composition>
